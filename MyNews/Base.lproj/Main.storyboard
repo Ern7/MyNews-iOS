@@ -17,8 +17,67 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
+        <!--Select-->
+        <scene sceneID="b6l-G2-yxS">
+            <objects>
+                <viewController id="ukI-9v-5U1" customClass="CountriesViewController" customModule="MyNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hTj-Ax-nFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ql6-uF-udR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountriesTableViewCell" id="GlE-1S-f7v" customClass="CountriesTableViewCell" customModule="MyNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GlE-1S-f7v" id="KmM-vo-X2s">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd8-iM-Vr4">
+                                                    <rect key="frame" x="20" y="12" width="44" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wd8-iM-Vr4" firstAttribute="leading" secondItem="KmM-vo-X2s" secondAttribute="leading" constant="20" id="eN3-UG-HIg"/>
+                                                <constraint firstItem="wd8-iM-Vr4" firstAttribute="centerY" secondItem="KmM-vo-X2s" secondAttribute="centerY" id="ikt-GA-afF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="wd8-iM-Vr4" id="Ik0-GJ-iJY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CJs-0f-tTT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CJs-0f-tTT" firstAttribute="bottom" secondItem="ql6-uF-udR" secondAttribute="bottom" id="6zA-Mb-OIN"/>
+                            <constraint firstItem="CJs-0f-tTT" firstAttribute="trailing" secondItem="ql6-uF-udR" secondAttribute="trailing" id="AKc-Mi-SWx"/>
+                            <constraint firstItem="ql6-uF-udR" firstAttribute="top" secondItem="CJs-0f-tTT" secondAttribute="top" id="ZNL-xo-D3g"/>
+                            <constraint firstItem="ql6-uF-udR" firstAttribute="leading" secondItem="CJs-0f-tTT" secondAttribute="leading" id="sUu-or-CrI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select" id="NX8-F0-iES"/>
+                    <connections>
+                        <outlet property="tableView" destination="ql6-uF-udR" id="Qaf-Gt-vWa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2Z-TY-8dj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="-600"/>
+        </scene>
         <!--MyNews-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -30,9 +89,51 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lja-HT-6h3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="812"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="eds-LM-23y">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98e-Je-MsH">
+                                            <rect key="frame" x="20" y="11" width="75" height="22"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left.arrow.right.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dS3-Y5-OAI">
+                                            <rect key="frame" x="384" y="12.5" width="20" height="19"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLa-TM-aBv">
+                                            <rect key="frame" x="331" y="14.5" width="48" height="15"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                            <color key="textColor" red="0.35686274509999999" green="0.031372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-Oc-iC6">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <segue destination="ukI-9v-5U1" kind="show" identifier="goToCountries" id="ihH-Ih-PSF"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="KbD-Oc-iC6" secondAttribute="bottom" id="0EZ-yq-oQz"/>
+                                        <constraint firstAttribute="trailing" secondItem="KbD-Oc-iC6" secondAttribute="trailing" id="J6y-QO-NUG"/>
+                                        <constraint firstItem="98e-Je-MsH" firstAttribute="centerY" secondItem="eds-LM-23y" secondAttribute="centerY" id="KBi-Sx-LMy"/>
+                                        <constraint firstItem="dS3-Y5-OAI" firstAttribute="centerY" secondItem="eds-LM-23y" secondAttribute="centerY" id="LW0-lI-ao7"/>
+                                        <constraint firstItem="98e-Je-MsH" firstAttribute="leading" secondItem="eds-LM-23y" secondAttribute="leading" constant="20" id="WwH-61-But"/>
+                                        <constraint firstAttribute="trailing" secondItem="dS3-Y5-OAI" secondAttribute="trailing" constant="10" id="a34-oS-6SG"/>
+                                        <constraint firstItem="dS3-Y5-OAI" firstAttribute="leading" secondItem="rLa-TM-aBv" secondAttribute="trailing" constant="5" id="k7u-9X-yfd"/>
+                                        <constraint firstItem="KbD-Oc-iC6" firstAttribute="top" secondItem="eds-LM-23y" secondAttribute="top" id="ntA-Xh-UJr"/>
+                                        <constraint firstItem="KbD-Oc-iC6" firstAttribute="leading" secondItem="eds-LM-23y" secondAttribute="leading" id="oPY-2W-rXA"/>
+                                        <constraint firstItem="rLa-TM-aBv" firstAttribute="centerY" secondItem="eds-LM-23y" secondAttribute="centerY" id="qVQ-ka-oWg"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeadlinesTableViewCell" rowHeight="90" id="wjZ-BC-Pgo" customClass="HeadlinesTableViewCell" customModule="MyNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wjZ-BC-Pgo" id="rbp-yx-J0s">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
@@ -190,9 +291,11 @@
                     <navigationItem key="navigationItem" title="MyNews" id="VFd-t3-jHN"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="bts-zT-T09" id="lZj-aE-RY1"/>
+                        <outlet property="currentCountryLabel" destination="98e-Je-MsH" id="hqA-Ax-3gE"/>
                         <outlet property="errorAnimationView" destination="X3k-Fh-I00" id="QYb-H4-tkV"/>
                         <outlet property="errorDescriptionLabel" destination="RWm-Q4-2ho" id="r0L-7D-eRe"/>
                         <outlet property="errorRefreshButton" destination="ijV-JR-bis" id="7I1-v1-6RX"/>
+                        <outlet property="errorTitleLabel" destination="XjU-nI-y3V" id="WrN-ce-9Mm"/>
                         <outlet property="errorView" destination="2cN-Sc-cyT" id="M9S-FQ-xAh"/>
                         <outlet property="loadMoreViewHeightConstraint" destination="wW2-LE-jYi" id="rBU-5U-Fjw"/>
                         <outlet property="loadMorectivityIndicatorView" destination="8o4-wD-IsO" id="C4M-Xd-897"/>
@@ -361,6 +464,7 @@
     </designables>
     <color key="tintColor" red="0.35686274509999999" green="0.031372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
+        <image name="arrow.left.arrow.right.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

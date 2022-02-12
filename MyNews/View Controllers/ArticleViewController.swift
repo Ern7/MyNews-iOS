@@ -11,6 +11,7 @@ import Kingfisher
 
 class ArticleViewController : UIViewController {
     
+    //UI
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var subtitleLabel : UILabel!
@@ -18,10 +19,11 @@ class ArticleViewController : UIViewController {
     @IBOutlet weak var photoImageView : UIImageView!
     @IBOutlet weak var photoImageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     
+    //VIEWMODEL
     public var articleViewModel: ArticleViewModel!
     
-    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never

@@ -15,7 +15,8 @@ struct Constants {
     }
 
     struct ApiKeys {
-        static let NewsApiKey = "";
+        //static let NewsApiKey = "";
+        static let NewsApiKey = "bd275f7182394a779fbd1fe4fcb20450";
     }
     
     struct Font {
@@ -38,5 +39,6 @@ struct Constants {
     
     struct CellIdentifiers {
         static let headlinesTableViewCell = "HeadlinesTableViewCell";
+        static let countriesTableViewCell = "CountriesTableViewCell";
     }
 }

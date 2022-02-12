@@ -57,9 +57,9 @@ extension ArticleViewModel {
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
         let datePublished = dateFormatter.date(from: self.article.publishedAt)
           
-        dateFormatter.dateFormat = "dd MMM, yyyy"
-        let friendlyDate = dateFormatter.string(from: datePublished!)
-        return friendlyDate
+     //   dateFormatter.dateFormat = "dd MMM, yyyy"
+     //   let friendlyDate = dateFormatter.string(from: datePublished!)
+        return datePublished!.timeAgoDisplay()
     }
     
     var content: String {

@@ -12,15 +12,18 @@ import Lottie
 
 class HeadlinesViewController : UIViewController {
     
+    
     //UI
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorTitleLabel: UILabel!
     @IBOutlet weak var errorDescriptionLabel: UILabel!
     @IBOutlet weak var errorRefreshButton: UIButton!
     @IBOutlet weak var errorAnimationView: AnimationView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var loadMoreViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var loadMorectivityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var currentCountryLabel: UILabel!
     
     //STATES
     @Published var isLoadingMore = false
@@ -30,6 +33,7 @@ class HeadlinesViewController : UIViewController {
     
     //USE CASES
     let headlinesUseCase = HeadlinesUseCaseImp()
+    let countriesUseCase = CountriesUseCaseImp()
     
     //DATA
     var currentPage = 1
@@ -42,6 +46,7 @@ class HeadlinesViewController : UIViewController {
     
     //Segues
     let gotoArticleDetail = "gotoArticleDetail"
+    let goToCountries = "goToCountries"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,16 +58,17 @@ class HeadlinesViewController : UIViewController {
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ColorUtils.hexStringToUIColor(hex: Constants.AppPalette.primaryColor)]
         
         setupTableViewDelegatesAndDataSource()
+        adaptSelectedCountry()
         setupInitialStates()
         search()
     }
     
     
     // MARK: - Data methods
-    private func search(){
+    func search(){
         showLoader()
         currentPage = 1
-        headlinesUseCase.search(page: currentPage, pageSize: pageSize, searchText: searchText)
+        headlinesUseCase.search(page: currentPage, pageSize: pageSize, searchText: searchText, country: countriesUseCase.selectedCountryCode)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -74,9 +80,15 @@ class HeadlinesViewController : UIViewController {
                 }
             }, receiveValue: { [weak self] value in
                 DebuggingLogger.printData("Search results: \(value)")
-                self?.hideLoader()
-                self?.articleListVM.refreshList(value)
-                self?.tableView.isHidden = false
+                if value.isEmpty {
+                    self?.articleListVM.clearItems()
+                    self?.showEmptyView(message: "No articles found for this country.")
+                }
+                else {
+                    self?.hideLoader()
+                    self?.articleListVM.refreshList(value)
+                    self?.tableView.isHidden = false
+                }
                 self?.tableView.reloadData()
             }).store(in: &observers)
     }
@@ -124,6 +136,10 @@ class HeadlinesViewController : UIViewController {
             let indexPath = self.tableView.indexPath(for: cell)
         {
             destination.articleViewModel = articleListVM.articleAtIndex(indexPath.row)
+        }
+        else if segue.identifier == goToCountries {
+            let vc = segue.destination as! CountriesViewController
+            vc.delegate = self
         }
         
     }

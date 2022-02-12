@@ -36,6 +36,7 @@ extension HeadlinesViewController {
     func showErrorView(message: String) {
         DispatchQueue.main.async {
             self.tableView.isHidden = true
+            self.errorTitleLabel.text = "Error"
             self.errorDescriptionLabel.text = message
             self.errorView.isHidden = false
             self.errorAnimationView.play()
@@ -47,6 +48,17 @@ extension HeadlinesViewController {
         DispatchQueue.main.async {
             self.errorView.isHidden = true
             self.errorAnimationView.stop()
+        }
+    }
+    
+    func showEmptyView(message: String) {
+        DispatchQueue.main.async {
+            self.tableView.isHidden = false
+            self.errorTitleLabel.text = "Empty"
+            self.errorDescriptionLabel.text = message
+            self.errorView.isHidden = false
+            self.errorAnimationView.play()
+            self.hideLoader()
         }
     }
     
