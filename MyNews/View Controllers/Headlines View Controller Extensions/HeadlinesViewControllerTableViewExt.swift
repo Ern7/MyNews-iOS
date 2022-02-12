@@ -37,6 +37,7 @@ extension HeadlinesViewController : UITableViewDelegate, UITableViewDataSource {
         
         let url = URL(string: articleViewModel.urlToImage)
         cell.photoImageView.kf.setImage(with: url)
+        
         return cell
         
     }
@@ -46,5 +47,11 @@ extension HeadlinesViewController : UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == self.articleListVM.numberOfItems() - 1 {
+            self.loadMore()
+        }
+    }
 
 }

@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lja-HT-6h3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="812"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeadlinesTableViewCell" rowHeight="90" id="wjZ-BC-Pgo" customClass="HeadlinesTableViewCell" customModule="MyNews" customModuleProvider="target">
@@ -86,6 +86,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4J-Ci-trN">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8o4-wD-IsO">
+                                        <rect key="frame" x="197" y="15" width="20" height="20"/>
+                                        <color key="color" red="0.35686274509999999" green="0.031372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8o4-wD-IsO" firstAttribute="centerY" secondItem="C4J-Ci-trN" secondAttribute="centerY" id="K2o-4W-PvX"/>
+                                    <constraint firstAttribute="height" constant="50" id="wW2-LE-jYi"/>
+                                    <constraint firstItem="8o4-wD-IsO" firstAttribute="centerX" secondItem="C4J-Ci-trN" secondAttribute="centerX" id="xnP-At-fA2"/>
+                                </constraints>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bts-zT-T09">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="0.35686274509999999" green="0.031372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -158,10 +172,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="C4J-Ci-trN" firstAttribute="top" secondItem="Lja-HT-6h3" secondAttribute="bottom" id="0pL-Y8-YbL"/>
+                            <constraint firstItem="C4J-Ci-trN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1J6-Sn-NKc"/>
                             <constraint firstItem="bts-zT-T09" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7I5-2D-siG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C4J-Ci-trN" secondAttribute="bottom" id="7Nv-hN-bcj"/>
+                            <constraint firstItem="C4J-Ci-trN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HbB-5R-yJN"/>
                             <constraint firstItem="bts-zT-T09" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JeZ-Rm-JHU"/>
                             <constraint firstItem="2cN-Sc-cyT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KCu-nG-Kci"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lja-HT-6h3" secondAttribute="bottom" id="OU2-B9-aLp"/>
                             <constraint firstItem="2cN-Sc-cyT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="btz-yU-Co7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2cN-Sc-cyT" secondAttribute="bottom" id="dJv-LG-N0Y"/>
                             <constraint firstItem="2cN-Sc-cyT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="ruI-Hq-nVv"/>
@@ -177,6 +194,8 @@
                         <outlet property="errorDescriptionLabel" destination="RWm-Q4-2ho" id="r0L-7D-eRe"/>
                         <outlet property="errorRefreshButton" destination="ijV-JR-bis" id="7I1-v1-6RX"/>
                         <outlet property="errorView" destination="2cN-Sc-cyT" id="M9S-FQ-xAh"/>
+                        <outlet property="loadMoreViewHeightConstraint" destination="wW2-LE-jYi" id="rBU-5U-Fjw"/>
+                        <outlet property="loadMorectivityIndicatorView" destination="8o4-wD-IsO" id="C4M-Xd-897"/>
                         <outlet property="tableView" destination="Lja-HT-6h3" id="z8e-bY-mKI"/>
                     </connections>
                 </viewController>

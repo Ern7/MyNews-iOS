@@ -17,6 +17,20 @@ extension HeadlinesViewController {
         errorAnimationView.loopMode = .loop
         errorAnimationView.animationSpeed = 0.5
         hideErrorView()
+        
+        isLoadingMoreCancellable = self.$isLoadingMore
+            .sink() {
+                if $0 {
+                    self.loadMoreViewHeightConstraint.constant = 50.0
+                    self.loadMorectivityIndicatorView.startAnimating()
+                    self.loadMorectivityIndicatorView.isHidden = false
+                }
+                else {
+                    self.loadMoreViewHeightConstraint.constant = 0.0
+                    self.loadMorectivityIndicatorView.stopAnimating()
+                    self.loadMorectivityIndicatorView.isHidden = true
+                }
+        }
     }
     
     func showErrorView(message: String) {

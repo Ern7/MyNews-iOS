@@ -19,6 +19,8 @@ class HeadlinesViewController : UIViewController {
     @IBOutlet weak var errorRefreshButton: UIButton!
     @IBOutlet weak var errorAnimationView: AnimationView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var loadMoreViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loadMorectivityIndicatorView: UIActivityIndicatorView!
     
     //STATES
     @Published var isLoadingMore = false
@@ -31,7 +33,7 @@ class HeadlinesViewController : UIViewController {
     
     //DATA
     var currentPage = 1
-    var pageSize = 20
+    var pageSize = 15
     var searchText = ""
     
     //OBSERVERS
@@ -79,7 +81,7 @@ class HeadlinesViewController : UIViewController {
             }).store(in: &observers)
     }
     
-    private func loadMore(){
+    func loadMore(){
         isLoadingMore = true
         currentPage = currentPage + 1
         headlinesUseCase.search(page: currentPage, pageSize: pageSize, searchText: searchText)
@@ -90,7 +92,14 @@ class HeadlinesViewController : UIViewController {
                     DebuggingLogger.printData("Load more finished")
                 case .failure(let error):
                     DebuggingLogger.printData("Load more error: \(error.message)")
-                    self.showErrorView(message: error.message)
+                    self.isLoadingMore = false
+                    let alert = UIAlertController(title: "Load More Error", message: error.message, preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                        
+                    }))
+
+                    self.present(alert, animated: true)
                 }
             }, receiveValue: { [weak self] value in
                 DebuggingLogger.printData("Load more results: \(value)")
