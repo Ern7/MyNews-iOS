@@ -12,6 +12,13 @@ extension HeadlinesViewController {
     
     //MARK: - Error View
     
+    func setupInitialStates(){
+        errorAnimationView.contentMode = .scaleAspectFit
+        errorAnimationView.loopMode = .loop
+        errorAnimationView.animationSpeed = 0.5
+        hideErrorView()
+    }
+    
     func showErrorView(message: String) {
         DispatchQueue.main.async {
             self.tableView.isHidden = true

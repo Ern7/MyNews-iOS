@@ -51,6 +51,7 @@ class HeadlinesViewController : UIViewController {
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ColorUtils.hexStringToUIColor(hex: Constants.AppPalette.primaryColor)]
         
         setupTableViewDelegatesAndDataSource()
+        setupInitialStates()
         search()
     }
     
@@ -108,13 +109,13 @@ class HeadlinesViewController : UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-      /*  if  segue.identifier == gotoArticleDetail,
-            let destination = segue.destination as? PhotoDetailViewController,
+        if  segue.identifier == gotoArticleDetail,
+            let destination = segue.destination as? ArticleViewController,
             let cell = sender as? HeadlinesTableViewCell,
             let indexPath = self.tableView.indexPath(for: cell)
         {
-            destination.photoVM = photoListVM.photoAtIndex(indexPath.row)
+            destination.articleViewModel = articleListVM.articleAtIndex(indexPath.row)
         }
-        */
+        
     }
 }

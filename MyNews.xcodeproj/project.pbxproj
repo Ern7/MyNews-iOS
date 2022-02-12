@@ -35,6 +35,8 @@
 		0F12FC3C27B7F6C900D45E8E /* 24987-warning.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F12FC3B27B7F6C900D45E8E /* 24987-warning.json */; };
 		0F12FC3F27B7F8F600D45E8E /* HeadlinesViewControllerTableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F12FC3E27B7F8F600D45E8E /* HeadlinesViewControllerTableViewExt.swift */; };
 		0F12FC4127B7FD1B00D45E8E /* HeadlinesViewControllerStateManagementExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F12FC4027B7FD1A00D45E8E /* HeadlinesViewControllerStateManagementExt.swift */; };
+		0F12FC4327B802C700D45E8E /* 92490-error-purple.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F12FC4227B802C700D45E8E /* 92490-error-purple.json */; };
+		0F12FC4527B805FB00D45E8E /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F12FC4427B805FB00D45E8E /* ArticleViewController.swift */; };
 		0FE92BC227B791C2004E7FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE92BC127B791C2004E7FC8 /* AppDelegate.swift */; };
 		0FE92BC427B791C2004E7FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE92BC327B791C2004E7FC8 /* SceneDelegate.swift */; };
 		0FE92BC927B791C2004E7FC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE92BC727B791C2004E7FC8 /* Main.storyboard */; };
@@ -92,6 +94,8 @@
 		0F12FC3B27B7F6C900D45E8E /* 24987-warning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "24987-warning.json"; sourceTree = "<group>"; };
 		0F12FC3E27B7F8F600D45E8E /* HeadlinesViewControllerTableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesViewControllerTableViewExt.swift; sourceTree = "<group>"; };
 		0F12FC4027B7FD1A00D45E8E /* HeadlinesViewControllerStateManagementExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesViewControllerStateManagementExt.swift; sourceTree = "<group>"; };
+		0F12FC4227B802C700D45E8E /* 92490-error-purple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "92490-error-purple.json"; sourceTree = "<group>"; };
+		0F12FC4427B805FB00D45E8E /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		0FE92BBE27B791C2004E7FC8 /* MyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE92BC127B791C2004E7FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE92BC327B791C2004E7FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				0F12FC3B27B7F6C900D45E8E /* 24987-warning.json */,
+				0F12FC4227B802C700D45E8E /* 92490-error-purple.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			children = (
 				0F12FC3D27B7F8AD00D45E8E /* Headlines View Controller Extensions */,
 				0F12FC3627B7EE2E00D45E8E /* HeadlinesViewController.swift */,
+				0F12FC4427B805FB00D45E8E /* ArticleViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 				0FE92BC927B791C2004E7FC8 /* Main.storyboard in Resources */,
 				0F12FC0927B7D7BF00D45E8E /* Montserrat-SemiBold.ttf in Resources */,
 				0F12FC0A27B7D7BF00D45E8E /* Montserrat-Medium.ttf in Resources */,
+				0F12FC4327B802C700D45E8E /* 92490-error-purple.json in Resources */,
 				0F12FC0827B7D7BF00D45E8E /* Montserrat-Thin.ttf in Resources */,
 				0F12FC3C27B7F6C900D45E8E /* 24987-warning.json in Resources */,
 			);
@@ -631,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F12FC4527B805FB00D45E8E /* ArticleViewController.swift in Sources */,
 				0F12FC2C27B7E17B00D45E8E /* ArticleViewModel.swift in Sources */,
 				0F12FC3F27B7F8F600D45E8E /* HeadlinesViewControllerTableViewExt.swift in Sources */,
 				0F12FC1F27B7DEBE00D45E8E /* APICallError.swift in Sources */,

@@ -27,7 +27,7 @@ struct Constants {
     }
     
     struct AppPalette {
-        static let primaryColor = "#A9A8FA";
+        static let primaryColor = "#5B089C";
         static let invisibleGrey = "#C1D2D8"
         static let pageBackgroundGrey = "#F8F8F8"
     }
