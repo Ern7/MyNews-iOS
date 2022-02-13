@@ -40,4 +40,13 @@ struct Constants {
         static let headlinesTableViewCell = "HeadlinesTableViewCell";
         static let countriesTableViewCell = "CountriesTableViewCell";
     }
+    
+    struct CustomFirebaseEvents {
+        static let ChangeCountry = "change_country";
+    }
+    
+    struct CustomFirebaseEventsParameterKeys {
+        static let IsoCountryCodeChangeFromKey = "IsoCountryCodeChangeFrom";
+        static let IsoCountryCodeChangeToKey = "IsoCountryCodeChangeTo";
+    }
 }

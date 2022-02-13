@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import FirebaseAnalytics
 
 final class CountriesUseCaseImp {
     
@@ -68,7 +69,7 @@ extension CountriesUseCaseImp: CountriesUseCase {
                 return countryName!
             }
         }
-        return "N/A"
+        return ""
     }
     
     
