@@ -32,8 +32,8 @@ class HeadlinesViewController : UIViewController {
     var articleListVM = ArticleListViewModel(articles: [Article]())
     
     //USE CASES
-    let headlinesUseCase = HeadlinesUseCaseImp()
-    let countriesUseCase = CountriesUseCaseImp()
+    let headlinesUseCase = HeadlinesUseCaseImp.shared
+    let countriesUseCase = CountriesUseCaseImp.shared
     
     //DATA
     var currentPage = 1

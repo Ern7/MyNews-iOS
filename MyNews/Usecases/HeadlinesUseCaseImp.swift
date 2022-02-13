@@ -12,6 +12,8 @@ import Combine
 
 final class HeadlinesUseCaseImp {
     
+    static let shared = HeadlinesUseCaseImp()
+    
     private func getSearchWebResource(page: Int = 1, pageSize: Int = 20, searchText: String = "", country: String = "za") -> WebResource<NewsApiResponse> {
         
         guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)v2/top-headlines?country=\(country)&apiKey=\(Constants.ApiKeys.NewsApiKey)&pageSize=\(pageSize)&page=\(page)&q=\(searchText)") else {

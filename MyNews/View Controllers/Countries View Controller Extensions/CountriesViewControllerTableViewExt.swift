@@ -43,6 +43,7 @@ extension CountriesViewController : UITableViewDelegate, UITableViewDataSource {
         let countryViewModel = self.countriesListVM.countryAtIndex(indexPath.row)
         countriesUseCase.selectedCountryCode = countryViewModel.code
         delegate?.newCountrySelected(countryCode: countryViewModel.code)
+        eventTrackingUseCase.logCountryChangedTo(country: countriesUseCase.getCountryName(code: countryViewModel.code))
         _ = navigationController?.popViewController(animated: true)
     }
 

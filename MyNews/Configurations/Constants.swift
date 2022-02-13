@@ -42,11 +42,15 @@ struct Constants {
     }
     
     struct CustomFirebaseEvents {
-        static let ChangeCountry = "change_country";
+        static let ChangedCountry = "changed_country";
+        static let ArticleDetailScreenViewed = "article_detail_screen_viewed";
+        static let ViewedArticleInBrowser = "viewed_article_in_browser";
+
     }
     
     struct CustomFirebaseEventsParameterKeys {
-        static let IsoCountryCodeChangeFromKey = "IsoCountryCodeChangeFrom";
-        static let IsoCountryCodeChangeToKey = "IsoCountryCodeChangeTo";
+        static let CountryChangedToKey = "country_changed_to";
+        static let ArticleTitle = "article_title";
+        static let ArticleURL = "article_url";
     }
 }

@@ -11,6 +11,7 @@ import FirebaseAnalytics
 
 final class CountriesUseCaseImp {
     
+    static let shared = CountriesUseCaseImp()
     private var _selectedCountryCode: String = "za" //default
 }
 

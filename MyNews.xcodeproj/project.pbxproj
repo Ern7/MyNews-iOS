@@ -51,6 +51,8 @@
 		0F392FBC27B8F499005973F4 /* CountriesViewControllerSearchExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F392FBB27B8F499005973F4 /* CountriesViewControllerSearchExt.swift */; };
 		0F392FC027B8FDEB005973F4 /* HeadlinesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F392FBF27B8FDEB005973F4 /* HeadlinesUseCaseTests.swift */; };
 		0F392FC227B90115005973F4 /* CountriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F392FC127B90115005973F4 /* CountriesUseCaseTests.swift */; };
+		0F392FC627B981E8005973F4 /* EventTrackingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F392FC527B981E8005973F4 /* EventTrackingUseCase.swift */; };
+		0F392FC827B98250005973F4 /* EventTrackingUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F392FC727B98250005973F4 /* EventTrackingUseCaseImp.swift */; };
 		0FE92BC227B791C2004E7FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE92BC127B791C2004E7FC8 /* AppDelegate.swift */; };
 		0FE92BC427B791C2004E7FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE92BC327B791C2004E7FC8 /* SceneDelegate.swift */; };
 		0FE92BC927B791C2004E7FC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE92BC727B791C2004E7FC8 /* Main.storyboard */; };
@@ -123,6 +125,8 @@
 		0F392FBB27B8F499005973F4 /* CountriesViewControllerSearchExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewControllerSearchExt.swift; sourceTree = "<group>"; };
 		0F392FBF27B8FDEB005973F4 /* HeadlinesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesUseCaseTests.swift; sourceTree = "<group>"; };
 		0F392FC127B90115005973F4 /* CountriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesUseCaseTests.swift; sourceTree = "<group>"; };
+		0F392FC527B981E8005973F4 /* EventTrackingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingUseCase.swift; sourceTree = "<group>"; };
+		0F392FC727B98250005973F4 /* EventTrackingUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingUseCaseImp.swift; sourceTree = "<group>"; };
 		0FE92BBE27B791C2004E7FC8 /* MyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE92BC127B791C2004E7FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE92BC327B791C2004E7FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				0F12FC3027B7E8DD00D45E8E /* Protocols */,
 				0F12FC3327B7E9C200D45E8E /* HeadlinesUseCaseImp.swift */,
 				0F12FC4C27B832E100D45E8E /* CountriesUseCaseImp.swift */,
+				0F392FC727B98250005973F4 /* EventTrackingUseCaseImp.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			children = (
 				0F12FC3127B7E91600D45E8E /* HeadlinesUseCase.swift */,
 				0F12FC4A27B831EF00D45E8E /* CountriesUseCase.swift */,
+				0F392FC527B981E8005973F4 /* EventTrackingUseCase.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				0F12FC4927B82EBD00D45E8E /* Country.swift in Sources */,
 				0F12FC2127B7DED100D45E8E /* HttpMethod.swift in Sources */,
 				0F12FC1927B7DE1600D45E8E /* ColorUtils.swift in Sources */,
+				0F392FC827B98250005973F4 /* EventTrackingUseCaseImp.swift in Sources */,
 				0F12FC3A27B7F61800D45E8E /* HeadlinesTableViewCell.swift in Sources */,
 				0F12FC5127B8359700D45E8E /* CountryViewModel.swift in Sources */,
 				0F12FC4B27B831EF00D45E8E /* CountriesUseCase.swift in Sources */,
@@ -708,6 +715,7 @@
 				0F12FC4F27B8342200D45E8E /* CountriesViewController.swift in Sources */,
 				0FE92BC427B791C2004E7FC8 /* SceneDelegate.swift in Sources */,
 				0F12FC2327B7DF7F00D45E8E /* Article.swift in Sources */,
+				0F392FC627B981E8005973F4 /* EventTrackingUseCase.swift in Sources */,
 				0F12FC1B27B7DE8200D45E8E /* WebResource.swift in Sources */,
 				0F12FC4127B7FD1B00D45E8E /* HeadlinesViewControllerStateManagementExt.swift in Sources */,
 				0F12FC5827B8379400D45E8E /* CountriesTableViewCell.swift in Sources */,

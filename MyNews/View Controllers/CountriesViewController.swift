@@ -23,7 +23,8 @@ class CountriesViewController : UIViewController {
     var countriesListVM = CountryListViewModel(countries: [Country]())
     
     //USE CASES
-    let countriesUseCase = CountriesUseCaseImp()
+    let countriesUseCase = CountriesUseCaseImp.shared
+    let eventTrackingUseCase = EventTrackingUseCaseImp.shared
     
     //OBSERVERS
     var observers: [AnyCancellable] = []

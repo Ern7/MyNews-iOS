@@ -24,7 +24,7 @@ class CountriesUseCaseTests : XCTestCase {
     
     override func setUp() {
         super.setUp()
-        sut = CountriesUseCaseImp()
+        sut = CountriesUseCaseImp.shared
         observers = []
         positiveResultSearchText = "Au"
         negativeResultSearchText = "dlklfkhklfhlhflkh"

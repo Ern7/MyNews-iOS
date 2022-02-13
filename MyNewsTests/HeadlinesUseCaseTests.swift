@@ -21,8 +21,8 @@ class HeadlinesUseCaseTests : XCTestCase {
     
     override func setUp() {
         super.setUp()
-        sut = HeadlinesUseCaseImp()
-        countriesUseCase = CountriesUseCaseImp()
+        sut = HeadlinesUseCaseImp.shared
+        countriesUseCase = CountriesUseCaseImp.shared
         currentPage = 1
         pageSize = 10
         searchText = ""

@@ -24,10 +24,18 @@ class ArticleViewController : UIViewController {
     //VIEWMODEL
     public var articleViewModel: ArticleViewModel!
     
+    //USECASES
+    let eventTrackingUseCase = EventTrackingUseCaseImp.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
         adaptData()
+        eventTrackingUseCase.logArticleViewed(articleTitle: articleViewModel.title)
+    }
+    
+    private func logArticleViewedEvent(){
+        
     }
     
     private func adaptData(){
@@ -42,6 +50,7 @@ class ArticleViewController : UIViewController {
     // MARK: - Actions
     @IBAction func viewInbrowser(_ sender: Any) {
         if let url = URL(string: articleViewModel.url) {
+            eventTrackingUseCase.logArticleViewedInBrowser(articleTitle: articleViewModel.title, articleUrl: articleViewModel.url)
             UIApplication.shared.open(url)
         }
     }
