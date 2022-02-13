@@ -20,4 +20,16 @@ class LocalDataService {
         completion(.success(countries))
     }
     
+    func searchCountry(searchText:String, completion: @escaping (Result<[Country], APICallError>) -> Void) {
+        var countries = [Country]()
+        for localeCode in NSLocale.isoCountryCodes {
+            let identifier = NSLocale(localeIdentifier: localeCode)
+            let countryName = identifier.displayName(forKey: NSLocale.Key.countryCode, value: localeCode)
+            if countryName!.lowercased().contains(searchText.lowercased()) {
+                countries.append(Country(code: localeCode, name: countryName!))
+            }
+        }
+        completion(.success(countries))
+    }
+    
 }

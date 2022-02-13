@@ -127,6 +127,10 @@ class HeadlinesViewController : UIViewController {
         search()
     }
     
+    @IBAction func refreshHeadlines(_ sender: Any) {
+        search()
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

@@ -17,6 +17,7 @@ class CountriesViewController : UIViewController {
     
     //UI
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //VIEWMODELS
     var countriesListVM = CountryListViewModel(countries: [Country]())
@@ -35,11 +36,12 @@ class CountriesViewController : UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         setupTableViewDelegatesAndDataSource()
+        setupSearchBarDelegate()
         fetch()
     }
     
     // MARK: - Data methods
-    private func fetch(){
+    func fetch(){
         countriesUseCase.fetch()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
@@ -48,6 +50,24 @@ class CountriesViewController : UIViewController {
                     DebuggingLogger.printData("countries fetch finished")
                 case .failure(let error):
                     DebuggingLogger.printData("countries fetch error: \(error.message)")
+                }
+            }, receiveValue: { [weak self] value in
+                DebuggingLogger.printData("countries fetch results: \(value)")
+                self?.countriesListVM.refreshList(value)
+                self?.tableView.isHidden = false
+                self?.tableView.reloadData()
+            }).store(in: &observers)
+    }
+    
+    func search(searchText: String){
+        countriesUseCase.search(searchText: searchText)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    DebuggingLogger.printData("countries search finished")
+                case .failure(let error):
+                    DebuggingLogger.printData("countries search error: \(error.message)")
                 }
             }, receiveValue: { [weak self] value in
                 DebuggingLogger.printData("countries fetch results: \(value)")

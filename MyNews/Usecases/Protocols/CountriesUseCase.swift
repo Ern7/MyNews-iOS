@@ -11,5 +11,6 @@ import Combine
 protocol CountriesUseCase {
     var selectedCountryCode: String { get set }
     func fetch() -> Future<[Country], APICallError>
+    func search(searchText: String) -> Future<[Country], APICallError>
     func getCountryName(code: String) -> String 
 }

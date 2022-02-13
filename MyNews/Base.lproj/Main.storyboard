@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +23,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Select-->
+        <!--Select Country-->
         <scene sceneID="b6l-G2-yxS">
             <objects>
                 <viewController id="ukI-9v-5U1" customClass="CountriesViewController" customModule="MyNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,9 +34,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ql6-uF-udR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="5eA-DD-WFR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountriesTableViewCell" id="GlE-1S-f7v" customClass="CountriesTableViewCell" customModule="MyNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GlE-1S-f7v" id="KmM-vo-X2s">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -69,8 +75,9 @@
                             <constraint firstItem="ql6-uF-udR" firstAttribute="leading" secondItem="CJs-0f-tTT" secondAttribute="leading" id="sUu-or-CrI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select" id="NX8-F0-iES"/>
+                    <navigationItem key="navigationItem" title="Select Country" id="NX8-F0-iES"/>
                     <connections>
+                        <outlet property="searchBar" destination="5eA-DD-WFR" id="Mbi-ia-hYb"/>
                         <outlet property="tableView" destination="ql6-uF-udR" id="Qaf-Gt-vWa"/>
                     </connections>
                 </viewController>
@@ -288,7 +295,15 @@
                             <constraint firstItem="Lja-HT-6h3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zOq-ne-VZi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MyNews" id="VFd-t3-jHN"/>
+                    <navigationItem key="navigationItem" title="MyNews" id="VFd-t3-jHN">
+                        <barButtonItem key="rightBarButtonItem" id="tkl-nf-od3">
+                            <imageReference key="image" image="arrow.2.circlepath" catalog="system" symbolScale="small"/>
+                            <color key="tintColor" red="0.35686274509999999" green="0.031372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="refreshHeadlines:" destination="BYZ-38-t0r" id="qjh-eF-b0c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorView" destination="bts-zT-T09" id="lZj-aE-RY1"/>
                         <outlet property="currentCountryLabel" destination="98e-Je-MsH" id="hqA-Ax-3gE"/>
@@ -464,6 +479,7 @@
     </designables>
     <color key="tintColor" red="0.35686274509999999" green="0.031372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
+        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="arrow.left.arrow.right.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

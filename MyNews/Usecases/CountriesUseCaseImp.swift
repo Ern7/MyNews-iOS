@@ -45,6 +45,20 @@ extension CountriesUseCaseImp: CountriesUseCase {
         }
     }
     
+    func search(searchText: String) -> Future<[Country], APICallError> {
+        return Future { promixe in
+            LocalDataService.shared.searchCountry(searchText: searchText) { result in
+                switch result {
+                case .success(let response):
+                    promixe(.success(response))
+                case .failure(let error):
+                    DebuggingLogger.printData(error)
+                    promixe(.failure(error))
+                }
+            }
+        }
+    }
+    
     
     func getCountryName(code: String) -> String {
         for localeCode in NSLocale.isoCountryCodes {
